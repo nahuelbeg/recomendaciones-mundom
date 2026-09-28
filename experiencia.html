@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Conocé todos los detalles, fotos y opiniones de esta experiencia."
+    >
+    <meta name="theme-color" content="#063b5b">
+    <title>Experiencia | Recomendaciones Mundo Marino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="experience-page.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Recomendaciones Mundo Marino, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="22" fill="currentColor"/>
+              <path d="M10 26c5-8 10-8 15 0s10 8 15 0M10 33c5-8 10-8 15 0s10 8 15 0" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M24 10c-4 4-4 8 0 12 4-4 4-8 0-12Z" fill="#b8eff0"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>RECOMENDACIONES</strong>
+            <span>MUNDO MARINO <i>·</i> ARGENTINA</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#recomendaciones">Experiencias</a>
+          <a href="index.html#destinos">Otros destinos</a>
+          <a href="index.html#nosotros">Sobre nosotros</a>
+          <a class="nav-contact" href="index.html#contacto">Contacto <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="experience-detail">
+      <div class="container">
+        <a class="experience-back" href="index.html#recomendaciones">← Volver a las experiencias</a>
+        <div id="experience-not-found" class="experience-not-found" hidden>
+          <h1>No encontramos esa experiencia</h1>
+          <p>Volvé a la lista para elegir una experiencia disponible.</p>
+          <a class="button button-dark" href="index.html#recomendaciones">Ver experiencias</a>
+        </div>
+
+        <div id="experience-content" hidden>
+          <header class="experience-detail-heading">
+            <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span><span id="experience-category"></span></p>
+            <h1 id="experience-title"></h1>
+            <div class="experience-detail-meta">
+              <span class="experience-detail-rating" id="experience-rating"></span>
+              <span id="experience-tag"></span>
+            </div>
+          </header>
+
+          <section class="experience-gallery" id="experience-gallery" aria-label="Fotos de la experiencia"></section>
+
+          <div class="experience-detail-layout">
+            <article class="experience-description">
+              <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> CONOCÉ LA EXPERIENCIA</p>
+              <h2>Una aventura para <span>recordar.</span></h2>
+              <div id="experience-description"></div>
+            </article>
+            <aside class="experience-info">
+              <span class="experience-info-mark" aria-hidden="true">✳</span>
+              <p class="eyebrow">PARA PLANIFICAR</p>
+              <h2>Antes de ir</h2>
+              <p id="experience-tip"></p>
+              <a class="button button-dark" href="index.html#contacto">Consultar más información <span aria-hidden="true">↗</span></a>
+            </aside>
+          </div>
+
+          <section class="experience-reviews" aria-labelledby="reviews-title">
+            <div class="experience-reviews-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> VOCES VIAJERAS</p>
+                <h2 id="reviews-title">Opiniones de visitantes</h2>
+              </div>
+              <span class="reviews-count" id="reviews-count"></span>
+            </div>
+            <p class="reviews-note">Las opiniones que agregues se guardan solo en este navegador; no se publican en línea.</p>
+            <div class="reviews-layout">
+              <div class="review-list" id="review-list" aria-live="polite"></div>
+              <form class="review-form" id="review-form">
+                <h3>Compartí tu opinión</h3>
+                <label for="review-name">Tu nombre</label>
+                <input id="review-name" name="name" type="text" maxlength="50" autocomplete="name" required>
+                <label for="review-rating">Tu puntuación</label>
+                <select id="review-rating" name="rating" required>
+                  <option value="5">★★★★★ — Excelente</option>
+                  <option value="4">★★★★☆ — Muy buena</option>
+                  <option value="3">★★★☆☆ — Buena</option>
+                  <option value="2">★★☆☆☆ — Regular</option>
+                  <option value="1">★☆☆☆☆ — Mala</option>
+                </select>
+                <label for="review-text">Tu comentario</label>
+                <textarea id="review-text" name="comment" rows="4" maxlength="1000" required></textarea>
+                <button class="button button-dark" type="submit">Publicar opinión</button>
+                <p class="review-form-message" id="review-form-message" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer experience-detail-footer">
+      <div class="container footer-bottom">
+        <span>© 2026 RECOMENDACIONES MUNDO MARINO. HECHO PARA VIAJAR JUNTOS.</span>
+        <span>GUÍA INDEPENDIENTE · NO OFICIAL</span>
+        <a href="index.html#inicio">VOLVER ARRIBA ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
